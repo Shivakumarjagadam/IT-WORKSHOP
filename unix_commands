@@ -1,0 +1,208 @@
+user@shivakumar:~$ cat> grepFiletxt
+welcome to unix
+unix commands and line commands
+rgukt basar nirmal
+
+
+user@shivakumar:~$ grep "welcome" grepFiletxt
+welcome to unix
+
+user@shivakumar:~$ grep -h "unix" grepFiletxt
+welcome to unix
+unix commands and line commands
+
+user@shivakumar:~$ grep -n "unix" grepFiletxt
+1:welcome to unix
+2:unix commands and line commands
+
+user@shivakumar:~$ ^C
+grep -v 'basar' grepFiletxt
+welcome to unix
+unix commands and line commands
+
+ grep -e "commands" -e "basar" grepFiletxt
+unix commands and line commands
+rgukt basar nirmal
+
+grep "^unix" grepFiletxt
+unix commands and line commands
+
+user@shivakumar:~$ grep -c 'basar' grepFiletxt
+1
+
+user@shivakumar:~$ grep -l 'basar' grepFiletxt
+grepFiletxt
+user@shivakumar:~$ grep  -o "unix" grepFiletxt
+unix
+unix
+
+sed 's/is/in/' geekfile.txt
+unix in great os.unix is opensource.unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix in easy to learn.unix is multiuser os.learn unix.unix is a powerful.
+
+user@shivakumar:~$ sed 's/in/is/' geekfile.txt
+unix is great os.unix is opensource.unix is free os.
+learn operatisg system.
+unix lisux which one you choose.
+unix is easy to learn.unix is multiuser os.learn unix.unix is a powerful.
+
+user@shivakumar:~$ cat> month.txt
+august
+september
+november
+december
+july
+march
+may
+june
+^C
+
+user@shivakumar:~$ 
+// sort  month vise
+user@shivakumar:~$ sort -M month.txt
+march
+may
+june
+july
+august
+september
+november
+december
+
+user@shivakumar:~$ sort  month.txt
+august
+december
+july
+june
+march
+may
+november
+september
+
+user@shivakumar:~$ sort -r month.txt
+september
+november
+may
+march
+june
+july
+december
+august
+user@
+user@shivakumar:~$ cat> num.txt
+2
+5
+1
+9
+4
+2
+0
+^C
+user@shivakumar:~$ sort -n num.txt
+0
+1
+2
+2
+4
+5
+9
+user@shivakumar:~$ sort -nr num.txt
+9
+5
+4
+2
+2
+1
+0
+
+user@shivakumar:~$ sed '/june/d' month.txt
+august
+september
+november
+december
+july
+march
+may
+
+user@shivakumar:~$ sed 's/august/AUGUST/' month.txt
+AUGUST
+september
+november
+december
+july
+march
+may
+june
+
+user@shivakumar:~$ cat> sed.text
+unix/linux
+this is one of the best software
+unix and linux
+commands are used in linux
+^C
+
+user@shivakumar:~$ sed 's/unix/UNIX/' sed.text
+UNIX/linux
+this is one of the best software
+UNIX and linux
+commands are used in linux
+
+user@shivakumar:~$ sed '/best/d' sed.text
+unix/linux
+unix and linux
+commands are used in linux
+
+user@shivakumar:~$ sed '2,3d' sed.text
+unix/linux
+commands are used in linux
+
+
+user@shivakumar:~$ cat>awk1.txt
+venky window id 2345
+manasa linux 8765
+ravi unix id 5435
+vinay ubuntu 6754
+^C
+user@shivakumar:~$ awk '{print $1,$2}' awk1.txt
+venky window
+manasa linux
+ravi unix
+vinay ubuntu
+
+user@shivakumar:~$ cat awk1.txt
+venky window id 2345
+manasa linux 8765
+ravi unix id 5435
+vinay ubuntu 6754
+
+user@shivakumar:~$ shutdown +5
+Shutdown scheduled for Wed 2024-03-27 15:35:27 UTC, use 'shutdown -c' to cancel
+
+user@shivakumar:~$ sudo su
+[sudo] password for user: 
+root@shivakumar:/home/user# shutdown -c
+root@shivakumar:/home/user# man shutdown
+
+chmod u+x num.txt
+
+
+ftp ftp.dlptest.com
+Connected to ftp.dlptest.com.
+220 Welcome to the DLP Test FTP Server
+Name (ftp.dlptest.com:user): dlpuser
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> exit
+221 Goodbye.
+
+
+ssh shivakumar045@tty.sdf.org
+Warning: Permanently added the ED25519 host key for IP address '64:ff9b::cda6:5e04' to the list of known hosts.
+shivakumar045@tty.sdf.org's password: 
+
+
